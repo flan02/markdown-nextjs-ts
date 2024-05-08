@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import type { MDXComponents } from 'mdx/types'
 import Image, { ImageProps } from 'next/image'
 
@@ -10,12 +11,13 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     // Allows customizing built-in components, e.g. to add styling.
     h1: ({ children }) => (
-      <h1 style={{ color: 'red', fontSize: '48px' }}>{children}</h1>
+      <h1 style={{ color: 'blue', fontSize: '48px', width: '98vw' }}>{children}</h1>
     ),
     img: (props) => (
       <Image
-        sizes="100vw"
-        style={{ width: '100%', height: 'auto' }}
+        sizes="100"
+        width={400}
+        height={400}
         {...(props as ImageProps)}
       />
     ),
